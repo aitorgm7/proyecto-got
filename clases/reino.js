@@ -14,7 +14,7 @@ class reino{
     get getCasas(){return this.casas};
     set setCasas(miembros){this.casas=miembros};
     
-    set anadirCasa(casa){
+    anadirCasa(casa){
         this.casas.push(casa);
         console.log(`La casa ${casa.getNombre} ha sido añadida al Reino de ${this.nombre}.`);
     };
@@ -27,10 +27,14 @@ class reino{
     }
 
     get getRey(){return this.rey};
-    set setRey(rey){
-        this.rey=rey;
-        console.log(`${rey.getNombre} ha sido proclamado rey de ${this.nombre}.`)
-    };
+    set setRey(rey){this.rey=rey;};
+
+    proclamarRey(objrey){
+        if(objrey instanceof rey){
+            this.rey=objrey;
+            console.log(`${objrey.getNombre} ha sido proclamado rey de ${this.nombre}.`);
+        }
+    }
 
     datosRey(){
         console.log("Rey actual:")

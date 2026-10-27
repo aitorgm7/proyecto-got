@@ -17,7 +17,7 @@ class casa{
     get getMiembros(){return this.miembros};
     set setMiembros(miembros){this.miembros=miembros};
     
-    set anadirMiembro(miembro){
+    anadirMiembro(miembro){
          this.miembros.push(miembro);
         miembro.setCasa = this.nombre;
         console.log(`${miembro.getNombre} se ha añadido a la casa ${this.nombre}.`);
