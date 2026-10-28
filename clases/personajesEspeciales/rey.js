@@ -1,23 +1,23 @@
-import personaje from "../personaje.js";
+import Personaje from "../personaje.js";
 
-class rey extends personaje{
-    anosDeReinado;
+class Rey extends Personaje{
+    #anosDeReinado;
 
     constructor(){
         super();
-        this.anosDeReinado=0;
+        this.#anosDeReinado=0;
     }
 
-    get getAnosDeReinado(){return this.anosDeReinado};
-    set setAnosDeReinado(anosDeReinado){this.anosDeReinado=anosDeReinado};
+    get getAnosDeReinado(){return this.#anosDeReinado};
+    set setAnosDeReinado(anosDeReinado){this.#anosDeReinado=anosDeReinado};
 
     luchar(){
-        console.log(`${this.nombre} lidera la batalla y anima a sus tropas.`);
+        console.log(`${this.getNombre()} lidera la batalla y anima a sus tropas.`);
     }
 
     gobernar() {
-        console.log(`${this.nombre} gobierna con sabiduria desde hace ${this.anosDeReinado} años.`);
+        console.log(`${this.getNombre()} gobierna con sabiduria desde hace ${this.#anosDeReinado} años.`);
     }
 }
 
-export default rey;
+export default Rey;

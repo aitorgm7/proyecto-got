@@ -1,24 +1,21 @@
-import personaje from "../personaje.js";
+import Personaje from "../personaje.js";
 
-class consejero extends personaje{
-    especialdad;
+class Consejero extends Personaje{
+    #especialdad;
     
     constructor(){
         super();
-        this.especialdad;
+        this.#especialdad;
     }
 
-    get getArma(){return this.arma};
-    set setArma(arma){this.arma=arma};
-
     luchar() {
-        console.log(`${this.nombre} no lucha con armas, sino con palabras e inteligencia.`);
+        console.log(`${this.getNombre()} no lucha con armas, sino con palabras e inteligencia.`);
     }
 
     aconsejar(persona){
-        console.log(`${this.nombre} aconseja a ${persona.getNombre} sobre ${this.especialdad}.`)
+        console.log(`${this.getNombre()} aconseja a ${persona.getNombre} sobre ${this.#especialdad}.`)
     }
 
 }
 
-export default consejero;
+export default Consejero;
