@@ -2,6 +2,7 @@ class Arma{
     #nombre;
     #dano;
     #tipo;
+    #material;
     constructor(){
         this.#nombre="";
         this.#dano="";
@@ -16,6 +17,9 @@ class Arma{
 
     get getTipo(){return this.#tipo};
     set setTipo(tipo){this.#tipo=tipo};
+
+    get getMaterial(){return this.#material};
+    set setMaterial(material){this.#material=material};
 
     descripcion() {
         console.log(`${this.#nombre} (${this.#tipo}) - daño: ${this.#dano}`);

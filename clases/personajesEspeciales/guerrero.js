@@ -29,15 +29,23 @@ class Guerrero extends Personaje{
     atacar(objetivo){
         let dano=parseInt(this.#arma.getDano*(1+Math.random()));
         console.log(`${this.getNombre} ataca a ${objetivo.getNombre} causando ${dano} puntos de dano.`);
-        objetivo.recibirDano(dano);
+        objetivo.recibirDano(dano,this);
     }
 
-    recibirDano(dano){
+    recibirDano(dano, enemigo){
         this.#vida-=dano;
         if(this.#vida<1){
-            this.#vida=0;
-            this.setVivo=false;
-            console.log(`${this.getNombre} ha muerto.`);
+            if(enemigo.getTipo == "Caminante blanco"){
+                this.#vida=0;
+                this.setVivo=false;
+                this.setTipo="Caminante blanco";
+            }
+            else{
+                this.#vida=0;
+                this.setVivo=false;
+                console.log(`${this.getNombre} ha muerto.`);
+            }
+            
         }
     }
 

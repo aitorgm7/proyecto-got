@@ -3,11 +3,13 @@ class Personaje{
     #edad;
     #vivo;
     #casa;
+    #tipo
     constructor(){
         this.#nombre="";
         this.#edad=0;
         this.#vivo=true;
         this.#casa="";
+        this.#tipo="";
     }
 
     get getNombre(){return this.#nombre};
@@ -22,7 +24,8 @@ class Personaje{
     get getCasa(){return this.#casa};
     set setCasa(casa){this.#casa=casa};
 
-    
+    get getTipo(){return this.#tipo};
+    set setTipo(tipo){this.#tipo=tipo};
 
     estado(){
         if(this.#vivo) console.log(`${this.#nombre} está vivo.`);
